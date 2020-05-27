@@ -44,7 +44,7 @@ function search() {
                     roles();
                     break;
                 case options[2]:
-                    employees();
+                    employee();
                     break;
                 case options[3]:
                     changeEmployee();
@@ -65,7 +65,7 @@ function search() {
         })
     };
 
-    function employees() {
+    function employee() {
         var employeeCol = 'SELECT first_name, last_name, title, salary FROM employee';
         employeeCol += 'LEFT JOIN role';
         employeeCol += 'ON employee.role_id = role.id';
