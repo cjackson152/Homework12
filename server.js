@@ -1,6 +1,6 @@
 var inquirer = require('inquirer');
-var connection = require('./connection')
-const choices = [
+//var connection = require('./connection')
+const options = [
     'Departments',
     'Roles',
     'Employees',
@@ -48,7 +48,7 @@ function search() {
                     break;
                 case options[3]:
                     changeEmployee();
-                case options[4]:
+                case update[4]:
                     connection.end();
                     break
 
@@ -75,3 +75,26 @@ function search() {
             search()
         })
     };
+
+    function roles() {
+        var roleCol = 'SELECT * FROM role';
+        connection.query(roleCol, function (err, result){
+            if(err) throw err;
+            console.log(result);
+            search();
+        })
+    };
+
+    const update = () => {
+        function initUpdate() {
+            inquirer
+                .prompt({
+                    name: 'action',
+                    type: 'list',
+                    message: 'Update Employee',
+                    choices: employees
+                })
+        }
+        initUpdate();
+
+    }
