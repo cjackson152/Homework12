@@ -1,5 +1,4 @@
 var inquirer = require('inquirer');
-var connection = require('./connection')
 var mysql = require('mysql');
 var connection = mysql.createConnection({
     host: 'localhost',
