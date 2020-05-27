@@ -1,5 +1,13 @@
 var inquirer = require('inquirer');
-//var connection = require('./connection')
+var connection = require('./connection')
+var mysql = require('mysql');
+var connection = mysql.createConnection({
+    host: 'localhost',
+    port: 3306,
+    user: 'root',
+    password: 'mixVok-quxsy0-sinmup',
+    database: 'department_db'
+})
 const options = [
     'Departments',
     'Roles',
