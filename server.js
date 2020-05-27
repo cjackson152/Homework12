@@ -85,7 +85,7 @@ function search() {
         })
     };
 
-    const update = () => {
+    const changeEmployee = () => {
         function initUpdate() {
             inquirer
                 .prompt({
