@@ -26,7 +26,7 @@ const employees = [
     'JD'
 
 ];
-// things required for update
+// things required for updating employees
 const update = [
     'First Name',
     'Last Name',
@@ -72,7 +72,7 @@ function search() {
         var departmentCol = 'SELECT * FROM department';
         connection.query(departmentCol, function(err, result){
             if(err) throw err;
-            console.log(result);
+            console.table(result);
             search()
         })
     };
@@ -82,7 +82,7 @@ function search() {
         var roleCol = 'SELECT * FROM role';
         connection.query(roleCol, function (err, result){
             if(err) throw err;
-            console.log(result);
+            console.table(result);
             search();
         })
     };
@@ -93,7 +93,7 @@ function search() {
         employeeCol += 'ON employee.role_id = role.id'
         connection.query(employeeCol, function(err, result){
             if(err) throw err;
-            console.log(result);
+            console.table(result);
             search()
         })
     };
