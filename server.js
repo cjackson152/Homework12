@@ -44,10 +44,7 @@ const departmentList = [
 ]
 // things required for updating employees
 const update = [
-    'Employees',
-    'Role',
-    'Department',
-    'Exit'
+    'Employees'
 ];
 
 search();
@@ -113,20 +110,80 @@ function search() {
             search()
         })
     };
+// other attempt at creating an add employee functionality
+  /* function createEmployee(employees, roleList, departmentList) {
+        inquirer
+            .prompt([{
+                type: 'input',
+                name: 'first_name',
+                message: 'Employee First Name?',
+                validate: async (input) => {
+                    if (/^[a-z A-Z] +$/.test(input)){
+                        return true;
+                    }
+                }
+                
+            },
+            {
+                type: 'input', 
+                name: 'last_name',
+                message: 'Employee Last Name?',
+                validate: async (input) => {
+                    if (/^[a-z A-Z]+$/.test(input)) {
+                        return true;
+                    }
 
+                }
+            },
+            {
+                type: 'list',
+                name: 'role',
+                message: 'Employee Role?',
+                choices: roleList
+            },
+            {
+                type: 'list',
+                name: 'department',
+                message: 'Which Department?',
+                choices: departmentList
+            }])
+            .then(function (data) {
+                console.log(data);
+                let newEmployeesFirstName = data.first_name;
+                let newEmployeesLastName = data.last_name;
+                let newEmployeesRoleId = data.role.id;
+                let newEmployeeDepartmentId = data.department.id;
+            })
+    }
+*/
 // update employees *currently just selects an employee and ends connection*
     const changeEmployee = () => {
         function initUpdate() {
             inquirer
-                .prompt(
+                .prompt([
                {
                    type: 'list',
                    name: 'action',
-                   message: 'Employees',
+                   message: 'Update Employee',
                    choices: employees
-               },)
+               },
+// can not figure this out               
+              /* .then(function(answer){
+                   switch (answer.action) {
+                       case New_Employee[0]:
+                           createEmployee();
+                           break;
+                        case Update_Employee[1]:
+                            updateEmployee();
+                            break;
+                        case exit[2]:
+                            connection.end();
+                            
+
+                   }
+               })*/
 //cant figure out why inquirer wont continue onto the next               
-              /* {
+                {
                    type: 'list',
                    name: 'action',
                    message: 'Employee role',
@@ -137,7 +194,7 @@ function search() {
                    name: 'action',
                    message: 'Employee Department',
                    choices: departmentList
-               })*/
+               }])
 
 // potential add employee functionality               
                /* .then(function(answer){
