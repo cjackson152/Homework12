@@ -114,7 +114,7 @@ function search() {
         })
     };
 
-// update employees
+// update employees *currently just selects an employee and ends connection*
     const changeEmployee = () => {
         function initUpdate() {
             inquirer
@@ -125,6 +125,7 @@ function search() {
                    message: 'Employees',
                    choices: employees
                },)
+//cant figure out why inquirer wont continue onto the next               
               /* {
                    type: 'list',
                    name: 'action',
@@ -137,6 +138,8 @@ function search() {
                    message: 'Employee Department',
                    choices: departmentList
                })*/
+
+// potential add employee functionality               
                /* .then(function(answer){
                     switch(answer.action) {
                         case names[0]:
