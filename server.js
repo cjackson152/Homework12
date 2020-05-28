@@ -14,6 +14,7 @@ const options = [
     'Departments',
     'Roles',
     'Employees',
+    'Change Employee Info',
     'Exit'
 ];
 // current employees
