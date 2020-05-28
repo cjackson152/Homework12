@@ -75,8 +75,8 @@ function search() {
                     break;
                 case options[3]:
                     changeEmployee();
-                    break;
-                case update[4]:
+                    
+                case options[4]:
                     connection.end();
                     break
 
@@ -120,24 +120,26 @@ function search() {
         function runUpdate() {
             inquirer
                 .prompt({
-                    name: 'action',
                     type: 'list',
+                    name: 'employeeList',
                     message: 'Update Employee',
                     choices: employees
                 },
                 {
                     type: 'list',
-                    name: 'role',
-                    message: 'New Role',
+                    name: 'roleList',
+                    message: 'Update Role',
                     choices: roleList
                 },
                 {
                     type: 'list',
-                    name: 'department',
-                    message: 'New Department',
+                    name: 'departmentList',
+                    message: 'Update Department',
                     choices: departmentList
+
                 })
-        }
+                };
+
         runUpdate();
 
     }
