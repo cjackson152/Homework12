@@ -44,8 +44,7 @@ const departmentList = [
 ]
 // things required for updating employees
 const update = [
-    'First Name',
-    'Last Name',
+    'Employees',
     'Role',
     'Department',
     'Exit'
@@ -76,7 +75,7 @@ function search() {
                 case options[3]:
                     changeEmployee();
                     
-                case options[4]:
+                case update[4]:
                     connection.end();
                     break
 
@@ -117,29 +116,62 @@ function search() {
 
 // update employees
     const changeEmployee = () => {
-        function runUpdate() {
+        function initUpdate() {
             inquirer
-                .prompt({
-                    type: 'list',
-                    name: 'employeeList',
-                    message: 'Update Employee',
-                    choices: employees
-                },
-                {
-                    type: 'list',
-                    name: 'roleList',
-                    message: 'Update Role',
-                    choices: roleList
-                },
-                {
-                    type: 'list',
-                    name: 'departmentList',
-                    message: 'Update Department',
-                    choices: departmentList
+                .prompt(
+               {
+                   type: 'list',
+                   name: 'action',
+                   message: 'Employees',
+                   choices: employees
+               },)
+              /* {
+                   type: 'list',
+                   name: 'action',
+                   message: 'Employee role',
+                   choices: roleList
+               },
+               {
+                   type: 'list',
+                   name: 'action',
+                   message: 'Employee Department',
+                   choices: departmentList
+               })*/
+               /* .then(function(answer){
+                    switch(answer.action) {
+                        case names[0]:
+                            inquirer.prompt({
+                                type: 'input',
+                                name: 'action',
+                                message: 'Employee Names',
+                                choices: employees
+                            });
+ 
+                        case roleList[1]:
+                            inquirer.prompt({
+                                type: 'input',
+                                name: 'action',
+                                message: 'Employee Role',
+                                choices: roleList
+                            });
+ 
+                        case departmentList[2]:
+                            inquirer.prompt({
+                                type: 'input',
+                                name: 'action',
+                                message: 'Employee Department',
+                                choices: departmentList
+                            });
 
-                })
+                        case options[3]:
+                            connection.end();
+                            break;
+
+                    }
+                })*/
+            
                 };
 
-        runUpdate();
+        initUpdate();
 
     }
