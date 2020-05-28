@@ -87,7 +87,7 @@ function search() {
     };
 //display employees
     function employee() {
-        var employeeCol = 'SELECT first_name, last_name, title, salary FROM employee';
+        var employeeCol = 'SELECT first_name, last_name, title, salary FROM employee ';
         employeeCol += 'LEFT JOIN role ';
         employeeCol += 'ON employee.role_id = role.id'
         connection.query(employeeCol, function(err, result){
