@@ -75,7 +75,7 @@ function search() {
     function employee() {
         var employeeCol = 'SELECT first_name, last_name, title, salary FROM employee';
         employeeCol += 'LEFT JOIN role';
-        employeeCol += 'ON employee.role_id = role.id';
+       // employeeCol += 'ON employee.role_id = role.id';
         connection.query(employeeCol, function(err, result){
             if(err) throw err;
             console.log(result);
