@@ -26,6 +26,22 @@ const employees = [
     'JD'
 
 ];
+
+const roleList = [
+    'Programmer',
+    'Accountant',
+    'Auto Sales',
+    'Contractor',
+    'Sales person'
+]
+
+const departmentList = [
+    'Installation',
+    'Sales',
+    'Configuration',
+    'Accounting',
+    'Auto'
+]
 // things required for updating employees
 const update = [
     'First Name',
@@ -59,6 +75,7 @@ function search() {
                     break;
                 case options[3]:
                     changeEmployee();
+                    break;
                 case update[4]:
                     connection.end();
                     break
@@ -100,15 +117,27 @@ function search() {
 
 // update employees
     const changeEmployee = () => {
-        function initUpdate() {
+        function runUpdate() {
             inquirer
                 .prompt({
                     name: 'action',
                     type: 'list',
                     message: 'Update Employee',
                     choices: employees
+                },
+                {
+                    type: 'list',
+                    name: 'role',
+                    message: 'New Role',
+                    choices: roleList
+                },
+                {
+                    type: 'list',
+                    name: 'department',
+                    message: 'New Department',
+                    choices: departmentList
                 })
         }
-        initUpdate();
+        runUpdate();
 
     }
