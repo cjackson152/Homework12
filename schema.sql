@@ -71,3 +71,4 @@ VALUES ('JD', 'Stevenson', 2);
 INSERT into employee (first_name, last_name, role_id)
 VALUES ('Alex', 'Alexson', 1);
 
+SELECT * FROM employee
